@@ -1,6 +1,6 @@
 {
     "name": "Telegram proxy",
-    "version": "latest",
+    "version": "release-0.7.1",
     "slug": "telegram-proxy",
     "description": "The Telegram Messenger MTProto proxy is a zero-configuration container that automatically sets up a proxy server that speaks Telegram's native MTProto.",
     "url": "https://github.com/ad/ha-telegram-proxy",
@@ -14,17 +14,19 @@
     "hassio_api": false,
     "init": false,
     "options": {
-        "SECRET": "",
-        "SECRET_COUNT": "1",
-        "TAG": "",
-        "WORKERS": "2"
+        "MTP_SECRET": "",
+        "MTP_TAG": "",
+        "MTP_PORT": "4443",
+        "MTP_DD_ONLY": "f",
+        "MTP_TLS_ONLY": "f"
     },
     "schema": {
-        "SECRET": "str",
-        "SECRET_COUNT": "int(0,16)",
-        "TAG": "str",
-        "WORKERS": "int(1,16)"
+        "MTP_SECRET": "str",
+        "MTP_TAG": "str",
+        "MTP_PORT": "int(0,65535)", 
+        "MTP_DD_ONLY": "bool",
+        "MTP_TLS_ONLY": "bool"
     },
-    "image": "docker.io/telegrammessenger/proxy"
+    "image": "docker.io/seriyps/mtproto-proxy"
   }
   
